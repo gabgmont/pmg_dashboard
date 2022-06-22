@@ -1,0 +1,32 @@
+name: module_commons
+description: A new flutter module project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  bloc: ^8.0.3
+  flutter_modular: ^5.0.3
+  flutter_svg: ^1.1.0
+  freezed: ^2.0.3+1
+  freezed_annotation: ^2.0.3
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  logger: ^1.1.0
+  build_runner:
+
+flutter:
+  uses-material-design: true
+
+  module:
+    androidX: true
+    androidPackage: com.pmgdash.module_commons
+    iosBundleIdentifier: com.pmgdash.moduleCommons

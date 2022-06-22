@@ -1,0 +1,33 @@
+name: module_design
+description: A new flutter module project.
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  module_commons:
+    path: ../module_commons
+
+  google_fonts: ^3.0.1  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  assets: 
+    - assets/icons/
+    - assets/images/
+
+  module:
+    androidX: true
+    androidPackage: com.pmgdash.module_design
+    iosBundleIdentifier: com.pmgdash.moduleDesign
