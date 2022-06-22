@@ -16,6 +16,24 @@ dependencies:
   
   module_design:
     path: ../module_design
+  
+  module_provider:
+    path: ../module_provider
+  
+  module_assurance:
+    path: ../module_assurance
+
+  module_notifications:
+    path: ../module_notifications
+
+  module_registration:
+    path: ../module_registration
+
+  module_search:
+    path: ../module_search
+
+  module_welcome:
+    path: ../module_welcome
 
 dev_dependencies:
   flutter_test:
