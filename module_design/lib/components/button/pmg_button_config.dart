@@ -24,8 +24,9 @@ extension PmgButtonSizeConfig on PmgButtonSize {
     switch (this) {
       case PmgButtonSize.small:
       case PmgButtonSize.medium:
-        return 24;
+        return 18;
       case PmgButtonSize.large:
+        return 24;
       case PmgButtonSize.extraLarge:
         return 32;
     }
@@ -37,6 +38,7 @@ extension PmgButtonSizeConfig on PmgButtonSize {
       case PmgButtonSize.medium:
         return PmgTypography.bodyTiny(color: color);
       case PmgButtonSize.large:
+        return PmgTypography.bodySmall(color: color);
       case PmgButtonSize.extraLarge:
         return PmgTypography.bodyMedium(color: color);
     }
