@@ -80,6 +80,8 @@ class PmgIcon extends StatelessWidget {
 }
 
 enum PmgIcons {
+  check,
+  close,
   add,
   approved,
   arrow_down,

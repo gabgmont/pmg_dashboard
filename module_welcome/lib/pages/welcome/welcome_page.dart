@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
+import 'package:module_design/components/control/check_box/pmg_check_box.dart';
+import 'package:module_design/components/control/radio/pmg_radio.dart';
+import 'package:module_design/components/control/switch/pmg_switch.dart';
 import 'package:module_design/components/drop_down/pmg_drop_down.dart';
 import 'package:module_design/components/drop_down/pmg_drop_down_item.dart';
 import 'package:module_design/components/text_field/pmg_text_field.dart';
@@ -41,7 +44,10 @@ class _WelcomePageState extends State<WelcomePage> {
           children: [
             ...buildButtons(),
             ...buildTextFields(),
-            ...buildDropDown()
+            ...buildDropDown(),
+            buildCheckBox(),
+            buildRadio(),
+            buildSwitch()
           ],
         ),
       )),
@@ -88,4 +94,35 @@ class _WelcomePageState extends State<WelcomePage> {
           onItemSelected: (value) => setState(() => dropDownValue = value),
         )
       ];
+
+  buildCheckBox() => Row(
+        children: [
+          PmgCheckBox(onChange: (_) {}),
+          PmgCheckBox(selected: true, onChange: (_) {}),
+          PmgCheckBox(active: false, onChange: (_) {}),
+          PmgCheckBox(active: false, selected: true, onChange: (_) {}),
+          PmgCheckBox(hasError: true, onChange: (_) {})
+        ],
+      );
+  buildRadio() => Row(
+        children: [
+          PmgRadio(onTap: () {}),
+          PmgRadio(selected: true, onTap: () {}),
+          PmgRadio(active: false, onTap: () {}),
+          PmgRadio(active: false, selected: true, onTap: () {}),
+          PmgRadio(hasError: true, onTap: () {})
+        ],
+      );
+
+  buildSwitch() => Row(
+        children: [
+          PmgSwitch(onSwitch: (_) {}, value: true),
+          const SizedBox(width: 8),
+          PmgSwitch(onSwitch: (_) {}, value: false),
+          const SizedBox(width: 8),
+          PmgSwitch(onSwitch: (_) {}, value: false, disabled: true),
+          const SizedBox(width: 8),
+          PmgSwitch(onSwitch: (_) {}, value: true, disabled: true),
+        ],
+      );
 }
