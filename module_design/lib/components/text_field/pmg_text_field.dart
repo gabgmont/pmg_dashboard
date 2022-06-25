@@ -10,6 +10,7 @@ class PmgTextField extends StatefulWidget {
   final String? hint;
   final String? errorMessage;
   final bool isPassword;
+  final bool? enabled;
   final TextInputType? inputType;
   final List<TextInputMask>? inputFormatters;
   final Function(String text)? onChanged;
@@ -22,7 +23,7 @@ class PmgTextField extends StatefulWidget {
       this.inputType,
       this.inputFormatters,
       this.isPassword = false,
-      this.onChanged})
+      this.onChanged, this.enabled})
       : super(key: key);
 
   @override
@@ -65,6 +66,7 @@ class _PmgTextFieldState extends State<PmgTextField> {
         focusColor: Colors.transparent,
         onHover: (value) => setState(() => isHovering = value),
         child: TextFormField(
+          enabled: widget.enabled,
           focusNode: _focusNode,
           controller: widget.controller,
           onChanged: (value) {
