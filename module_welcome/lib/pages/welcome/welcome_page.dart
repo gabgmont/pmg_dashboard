@@ -41,15 +41,7 @@ class _WelcomePageState extends State<WelcomePage> {
           children: [
             ...buildButtons(),
             ...buildTextFields(),
-            PmgDropDown(
-              dropDownValue: dropDownValue,
-              clearOption: true,
-              itens: [
-                PmgDropDownItem(value: 1, content: Text('Teste')),
-                PmgDropDownItem(value: 2, content: Text('etseT'))
-              ],
-              onItemSelected: (value) => setState(() => dropDownValue = value),
-            )
+            ...buildDropDown()
           ],
         ),
       )),
@@ -82,6 +74,18 @@ class _WelcomePageState extends State<WelcomePage> {
           label: 'Nome',
           hint: 'Fulano',
           errorMessage: 'Digite o valor corretamente',
+        )
+      ];
+
+  buildDropDown() => [
+        PmgDropDown(
+          dropDownValue: dropDownValue,
+          clearOption: true,
+          itens: [
+            PmgDropDownItem(value: 1, content: const Text('Opcao 1')),
+            PmgDropDownItem(value: 2, content: const Text('Opcao 2'))
+          ],
+          onItemSelected: (value) => setState(() => dropDownValue = value),
         )
       ];
 }

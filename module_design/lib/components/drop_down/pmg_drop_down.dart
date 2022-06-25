@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_radius.dart';
 import 'package:module_design/styles/pmg_typography.dart';
@@ -40,22 +41,19 @@ class PmgDropDown extends StatelessWidget {
                     width: 1, color: borderColor ?? PmgColors.neutral)),
                 borderRadius: PmgRadius.radiusMedium),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                  8,
-                  8,
-                  16,
-                  8),
+              padding: const EdgeInsets.fromLTRB(8, 8, 16, 8),
               child: DropdownButton(
                 itemHeight: 50,
                 dropdownColor: backgroundColor,
                 focusColor: backgroundColor,
                 hint: Text(
                   'Selecione uma opção',
-                  style: PmgTypography.bodySmall(),
+                  style: PmgTypography.bodyTiny(),
                 ),
                 value: dropDownValue,
                 underline: const SizedBox(),
                 isExpanded: true,
+                icon: const PmgIcon(PmgIcons.expand_down),
                 items: itens
                     .map((item) => DropdownMenuItem(
                         value: item.value, child: item.content))
