@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+    
+  easy_mask: ^2.0.1
   flutter_bloc: ^8.0.1
   flutter_modular: ^5.0.3
   flutter_svg: ^1.1.0

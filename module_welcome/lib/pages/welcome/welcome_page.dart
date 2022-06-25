@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
+import 'package:module_design/components/text_field/pmg_text_field.dart';
 
 const buttonTypes = [
   PmgButtonType.primary,
@@ -34,9 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
-          children: [
-            ...buildButtons(),
-          ],
+          children: [...buildButtons(), ...buildTextFields()],
         ),
       )),
     );
@@ -46,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage> {
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: PmgButton(
             label: 'Button',
-            leftIcon: PmgIcons.add,
+            rightIcon: PmgIcons.add,
             buttonType: type,
             buttonSize: buttonSizes[_sizeIndex],
             onTap: () => setState(() {
@@ -56,4 +55,18 @@ class _WelcomePageState extends State<WelcomePage> {
                   }
                 })),
       ));
+
+  buildTextFields() => [
+        PmgTextField(
+          controller: TextEditingController(),
+          label: 'Nome',
+          hint: 'Fulano',
+        ),
+        PmgTextField(
+          controller: TextEditingController(),
+          label: 'Nome',
+          hint: 'Fulano',
+          errorMessage: 'Digite o valor corretamente',
+        )
+      ];
 }
