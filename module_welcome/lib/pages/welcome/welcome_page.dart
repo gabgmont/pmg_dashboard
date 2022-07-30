@@ -81,7 +81,7 @@ class _WelcomePageState extends State<WelcomePage> {
               child: PmgButton(
                   label: 'Contratar',
                   buttonType: PmgButtonType.primary,
-                  rightIcon: PmgIcons.expand_rght,
+                  rightIcon: PmgIcons.arrow_right,
                   buttonSize: PmgButtonSize.medium,
                   onTap: () => setState(() {
                         if (_sizeIndex > buttonSizes.length - 1) {
