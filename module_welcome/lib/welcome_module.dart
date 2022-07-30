@@ -1,6 +1,5 @@
 import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
-
 import 'pages/welcome/welcome_page.dart';
 
 class WelcomeModule extends Module {
