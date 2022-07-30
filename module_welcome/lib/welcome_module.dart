@@ -11,6 +11,7 @@ class WelcomeModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(PmgRoutes.welcome, child: (context, args) => const WelcomePage())
-  ];
+        ChildRoute(PmgRoutes.welcome,
+            child: (context, args) => const WelcomePage())
+      ];
 }

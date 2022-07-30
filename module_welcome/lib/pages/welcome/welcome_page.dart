@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
-import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
 import 'package:module_design/components/control/check_box/pmg_check_box.dart';
@@ -38,35 +38,84 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 78),
         child: Column(
           children: [
-            PmgImage(
-              image: PmgImages.pmg_logo,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(1300, 19, 16, 26),
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                    primary: Color.fromRGBO(0, 75, 118, 1)),
+                child: Text('Acessar Painel', style: TextStyle(fontSize: 16)),
+              ),
             ),
-            ...buildButtons(),
-            ...buildTextFields(),
-            ...buildDropDown(),
-            buildCheckBox(),
-            buildRadio(),
-            buildSwitch()
+            const Center(
+              child: Text(
+                'LOGO',
+                style: TextStyle(fontSize: 100),
+              ),
+            ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 50,
+            ),
+            Column(
+              children: const [
+                Text(
+                  'Está na hora de contratar seu seguro!',
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
+                ),
+                Text(
+                  'Nos envie um pedido e cuidaremos disso pra você!',
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 79),
+            SizedBox(
+              width: 200,
+              child: PmgButton(
+                  label: 'Contratar',
+                  buttonType: PmgButtonType.primary,
+                  rightIcon: PmgIcons.expand_rght,
+                  buttonSize: PmgButtonSize.medium,
+                  onTap: () => setState(() {
+                        if (_sizeIndex > buttonSizes.length - 1) {
+                          _sizeIndex = 0;
+                        }
+                      })),
+            ),
+
+            // ElevatedButton.icon(
+            //   onPressed: () {},
+            //   label: Text('Contratar'),
+            //   icon: Icon(Icons.arrow_right),
+            //   style: ElevatedButton.styleFrom(
+            //       primary: Color.fromRGBO(117, 165, 215, 1),
+            //       fixedSize: Size(200, 56),
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(6))),
+            // )
           ],
         ),
-      )),
+      ),
     );
   }
 
   buildButtons() => buttonTypes.map((type) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: PmgButton(
-            label: 'Button',
-            rightIcon: PmgIcons.add,
+            label: 'Contratar',
+            rightIcon: PmgIcons.arrow_right,
             buttonType: type,
             buttonSize: buttonSizes[_sizeIndex],
             onTap: () => setState(() {
-                  _sizeIndex++;
                   if (_sizeIndex > buttonSizes.length - 1) {
                     _sizeIndex = 0;
                   }
