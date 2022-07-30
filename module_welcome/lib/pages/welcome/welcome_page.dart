@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:module_design/assets/pmg_icons.dart';
+import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
 import 'package:module_design/components/control/check_box/pmg_check_box.dart';
@@ -42,6 +43,9 @@ class _WelcomePageState extends State<WelcomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
+            PmgImage(
+              image: PmgImages.pmg_logo,
+            ),
             ...buildButtons(),
             ...buildTextFields(),
             ...buildDropDown(),

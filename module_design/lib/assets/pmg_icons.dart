@@ -39,7 +39,7 @@ class PmgIcon extends StatelessWidget {
             onTap: onTap,
             borderRadius: PmgRadius.radiusCircular,
             child: SvgPicture.asset(
-              'assets/icons/$iconName.svg',
+              'assets/icon/$iconName.svg',
               package: 'module_design',
               height: size ?? 24,
               width: size ?? 24,
