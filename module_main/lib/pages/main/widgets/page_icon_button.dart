@@ -43,7 +43,7 @@ class PageIconButton extends StatelessWidget {
                     Center(
                       child: PmgIcon(
                         icon,
-                        size: 40,
+                        size: 32,
                         color: PmgColors.monoWhite,
                         onTap: onTap,
                       ),
