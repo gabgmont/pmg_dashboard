@@ -1,0 +1,37 @@
+name: module_main
+description: A new Flutter module project.
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  module_welcome:
+    path: '../module_welcome'
+  
+  module_notifications:
+    path: '../module_notifications'
+  
+  module_tenants:
+    path: '../module_tenants'
+  
+  module_assurance:
+    path: '../module_assurance'
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  module:
+    androidX: true
+    androidPackage: com.example.module_main
+    iosBundleIdentifier: com.example.moduleMain

@@ -29,8 +29,8 @@ dependencies:
   module_registration:
     path: ../module_registration
 
-  module_search:
-    path: ../module_search
+  module_tenants:
+    path: ../module_tenants
 
   module_welcome:
     path: ../module_welcome
