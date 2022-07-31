@@ -39,7 +39,7 @@ class _PmgSwitchState extends State<PmgSwitch> {
         height: 22,
         width: 40,
         child: Material(
-            borderRadius: PmgRadius.radiusPill,
+            borderRadius: PmgRadius.pill,
             color: _state.backgroundColor,
             child: Padding(
               padding: const EdgeInsets.all(4),

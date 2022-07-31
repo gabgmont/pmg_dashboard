@@ -39,7 +39,7 @@ class PmgDropDown extends StatelessWidget {
                 color: backgroundColor ?? Colors.transparent,
                 border: Border.fromBorderSide(BorderSide(
                     width: 1, color: borderColor ?? PmgColors.neutral)),
-                borderRadius: PmgRadius.radiusMedium),
+                borderRadius: PmgRadius.medium),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 8, 16, 8),
               child: DropdownButton(

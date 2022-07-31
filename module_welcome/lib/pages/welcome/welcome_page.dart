@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/core/pmg_routes.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
@@ -43,9 +45,14 @@ class _WelcomePageState extends State<WelcomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
-            PmgImage(
+            const PmgImage(
               image: PmgImages.pmg_logo,
             ),
+            const SizedBox(height: 24),
+            PmgButton(
+              label: 'Main Page',
+              rightIcon: PmgIcons.arrow_right,
+              onTap: () => Modular.to.pushNamed(PmgRoutes.mainPage)),
             ...buildButtons(),
             ...buildTextFields(),
             ...buildDropDown(),

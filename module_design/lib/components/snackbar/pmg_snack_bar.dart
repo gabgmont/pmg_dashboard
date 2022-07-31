@@ -193,7 +193,7 @@ class _TopSnackBarState extends State<TopSnackBar>
             child: TapBounceContainer(
               onTap: animationController.reverse,
               child: ClipRRect(
-                borderRadius: PmgRadius.radiusExtraLarge,
+                borderRadius: PmgRadius.extraLarge,
                 child: Container(
                   decoration: BoxDecoration(
                     color: widget.snackBarType.backgroundColor,

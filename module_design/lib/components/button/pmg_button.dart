@@ -39,7 +39,7 @@ class _PmgButtonState extends State<PmgButton> {
           color: widget.disabled
               ? widget.buttonType.disabledBackgroundColor
               : widget.buttonType.backgroundColor,
-          borderRadius: PmgRadius.radiusMedium,
+          borderRadius: PmgRadius.medium,
           child: InkWell(
             onTap: widget.onTap,
             hoverColor: widget.buttonType.hoverBackgroundColor,
@@ -51,7 +51,7 @@ class _PmgButtonState extends State<PmgButton> {
               isHighlighting = highlight;
             }),
             splashColor: widget.buttonType.highlightColor,
-            borderRadius: PmgRadius.radiusMedium,
+            borderRadius: PmgRadius.medium,
             child: Container(
               alignment: Alignment.center,
               height: widget.buttonSize.height,
@@ -67,7 +67,7 @@ class _PmgButtonState extends State<PmgButton> {
                                   : widget.buttonType.outlineColor,
                       width: 1),
                 ),
-                borderRadius: PmgRadius.radiusMedium,
+                borderRadius: PmgRadius.medium,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

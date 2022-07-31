@@ -1,6 +1,7 @@
 import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
 
+import 'pages/home/home_page.dart';
 import 'pages/welcome/welcome_page.dart';
 
 class WelcomeModule extends Module {
@@ -11,6 +12,7 @@ class WelcomeModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(PmgRoutes.welcome, child: (context, args) => const WelcomePage())
+    ChildRoute(PmgRoutes.welcome, child: (context, args) => const WelcomePage()),
+    ChildRoute(PmgRoutes.homePage, child: (context, args) => const HomePage())
   ];
 }

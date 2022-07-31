@@ -292,14 +292,14 @@ packages:
     source: path
     version: "1.0.0+1"
   module_commons:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../module_commons"
       relative: true
     source: path
     version: "1.0.0+1"
   module_design:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../module_design"
       relative: true
@@ -312,10 +312,17 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  module_search:
+  module_real_state:
     dependency: "direct main"
     description:
-      path: "../module_search"
+      path: "../module_real_state"
+      relative: true
+    source: path
+    version: "1.0.0+1"
+  module_tenants:
+    dependency: "direct main"
+    description:
+      path: "../module_tenants"
       relative: true
     source: path
     version: "1.0.0+1"

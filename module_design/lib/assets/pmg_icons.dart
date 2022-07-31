@@ -37,7 +37,7 @@ class PmgIcon extends StatelessWidget {
         children: [
           InkWell(
             onTap: onTap,
-            borderRadius: PmgRadius.radiusCircular,
+            borderRadius: PmgRadius.circular,
             child: SvgPicture.asset(
               'assets/icon/$iconName.svg',
               package: 'module_design',
@@ -57,7 +57,7 @@ class PmgIcon extends StatelessWidget {
                     width: 13,
                     decoration: BoxDecoration(
                         color: PmgColors.statusWarning,
-                        borderRadius: PmgRadius.radiusCircular,
+                        borderRadius: PmgRadius.circular,
                         border: const Border.fromBorderSide(
                             BorderSide(width: 1, color: PmgColors.monoWhite))),
                     child: Padding(

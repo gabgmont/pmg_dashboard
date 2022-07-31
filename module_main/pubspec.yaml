@@ -11,6 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  module_commons:
+    path: '../module_commons'
+
+  module_design:
+    path: '../module_design'
+
   module_welcome:
     path: '../module_welcome'
   
@@ -22,6 +28,9 @@ dependencies:
   
   module_assurance:
     path: '../module_assurance'
+
+  module_real_state:
+    path: '../module_real_state'
 
 dev_dependencies:
   flutter_test:

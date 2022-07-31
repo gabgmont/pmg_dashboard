@@ -88,21 +88,21 @@ class _PmgTextFieldState extends State<PmgTextField> {
             hintText: widget.hint,
             hintStyle: PmgTypography.bodyTiny(),
             focusedBorder: OutlineInputBorder(
-                borderRadius: PmgRadius.radiusMedium,
+                borderRadius: PmgRadius.medium,
                 borderSide:
                     const BorderSide(color: PmgColors.primary, width: 2)),
             errorBorder: OutlineInputBorder(
-                borderRadius: PmgRadius.radiusMedium,
+                borderRadius: PmgRadius.medium,
                 borderSide: BorderSide(
                     color: PmgColors.statusError,
                     width: _focusNode.hasFocus ? 2 : 1)),
             focusedErrorBorder: OutlineInputBorder(
-                borderRadius: PmgRadius.radiusMedium,
+                borderRadius: PmgRadius.medium,
                 borderSide: BorderSide(
                     color: PmgColors.statusError,
                     width: _focusNode.hasFocus ? 2 : 1)),
             enabledBorder: OutlineInputBorder(
-                borderRadius: PmgRadius.radiusMedium,
+                borderRadius: PmgRadius.medium,
                 borderSide: BorderSide(
                     color: isHovering
                         ? PmgColors.secondaryLight

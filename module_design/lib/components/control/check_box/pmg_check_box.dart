@@ -52,7 +52,7 @@ class _PmgCheckBoxState extends State<PmgCheckBox> {
           width: 18,
           decoration: BoxDecoration(
               color: _state.checkBoxColor,
-              borderRadius: PmgRadius.radiusMedium,
+              borderRadius: PmgRadius.medium,
               border: Border.fromBorderSide(
                   BorderSide(width: 2, color: _state.checkBoxOutlineColor))),
           child: Padding(

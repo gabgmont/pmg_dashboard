@@ -20,4 +20,5 @@ class PmgImage extends StatelessWidget {
 
 enum PmgImages {
   pmg_logo,
+  user_default
 }
