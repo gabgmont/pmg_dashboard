@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/styles/pmg_colors.dart';
@@ -26,16 +27,30 @@ class _MainMenuState extends State<MainMenu> {
         height: double.infinity,
         child: Column(
           children: [
-            const Padding(
-                padding: EdgeInsets.fromLTRB(
-                    PmgSpacing.spacingXXXS,
-                    PmgSpacing.spacingXXXS,
-                    PmgSpacing.spacingXXXS,
-                    PmgSpacing.spacingXXS),
-                child: PmgImage(image: PmgImages.user_default)),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(
+                    PmgSpacing.xxxs,
+                    PmgSpacing.xxxs,
+                    PmgSpacing.xxxs,
+                    PmgSpacing.xxs),
+                child: CachedNetworkImage(
+                  imageUrl: '/',
+                  errorWidget: (_, __, ___) => Container(
+                    height: 70,
+                    width: 70,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: PmgColors.neutralLight),
+                    child: const PmgIcon(
+                      PmgIcons.camera,
+                      color: PmgColors.neutralDark,
+                      size: 36,
+                    ),
+                  ),
+                )),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: PmgSpacing.spacingXS),
+                  const EdgeInsets.symmetric(horizontal: PmgSpacing.xs),
               child: Container(
                 height: 5,
                 decoration: BoxDecoration(

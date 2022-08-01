@@ -1,19 +1,19 @@
 class PmgSpacing {
-  static const double spacingNone = 0;
-  static const double spacingAtto = 2;
-  static const double spacingFemto = 4;
-  static const double spacingPico = 6;
-  static const double spacingNano = 8;
-  static const double spacingMicro = 12;
-  static const double spacingXXXS = 16;
-  static const double spacingXXS = 24;
-  static const double spacingXS = 32;
-  static const double spacingSM = 40;
-  static const double spacingMD = 48;
-  static const double spacingLG = 56;
-  static const double spacingXL = 64;
-  static const double spacingXXL = 80;
-  static const double spacingXXXL = 120;
-  static const double spacingHuge = 160;
-  static const double spacingGiant = 200;
+  static const double none = 0;
+  static const double atto = 2;
+  static const double femto = 4;
+  static const double pico = 6;
+  static const double nano = 8;
+  static const double micro = 12;
+  static const double xxxs = 16;
+  static const double xxs = 24;
+  static const double xs = 32;
+  static const double sm = 40;
+  static const double md = 48;
+  static const double lg = 56;
+  static const double xl = 64;
+  static const double xxl = 80;
+  static const double xxxl = 120;
+  static const double huge = 160;
+  static const double giant = 200;
 }

@@ -80,6 +80,7 @@ class PmgIcon extends StatelessWidget {
 }
 
 enum PmgIcons {
+  camera,
   check,
   close,
   add,
