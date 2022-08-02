@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/core/pmg_routes.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
@@ -79,8 +81,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   rightIcon: PmgIcons.arrow_right,
                   buttonSize: PmgButtonSize.medium,
                   onTap: () => setState(() {
-                        // re==teste
-                        //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (((context) = > SearchPage()))), (route) => false)
+                        Modular.to.pushNamed(PmgRoutes.registration);
                       })),
             ),
           ],
