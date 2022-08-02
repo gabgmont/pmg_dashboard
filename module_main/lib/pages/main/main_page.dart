@@ -5,6 +5,7 @@ import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
 import 'package:module_main/pages/main/controller/main_page_controller.dart';
+import 'package:module_main/pages/main/widgets/main_header.dart';
 import 'package:module_main/pages/main/widgets/main_menu.dart';
 import 'package:module_notifications/pages/notifications/notifications_page.dart';
 import 'package:module_real_state/page/real_states/real_states_page.dart';
@@ -32,40 +33,7 @@ class _MainPageState extends State<MainPage> {
           ),
           Column(
             children: [
-              Container(
-                color: PmgColors.primaryLight,
-                height: 100,
-                width: MediaQuery.of(context).size.width - 120,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: PmgSpacing.xxxs),
-                      child: Text.rich(TextSpan(
-                        text: 'Bem vindo,\n',
-                        style: PmgTypography.bodyLargeSemiBold(
-                            color: PmgColors.monoWhite),
-                        children: [
-                          TextSpan(
-                              text: 'Gabriel!',
-                              style: PmgTypography.bodyLarge()),
-                        ],
-                      )),
-                    ),
-                    const Spacer(),
-                    Text('Sair',
-                        style: PmgTypography.bodyMediumSemiBold(
-                            color: PmgColors.monoWhite)),
-                    const SizedBox(width: PmgSpacing.nano),
-                    PmgIcon(
-                      PmgIcons.logout,
-                      size: 40,
-                      color: PmgColors.monoWhite,
-                      onTap: (){},
-                    ),
-                    const SizedBox(width: PmgSpacing.xxxs)
-                  ],
-                ),
-              ),
+              const MainHeader(),
               SizedBox(
                 height: MediaQuery.of(context).size.height - 100,
                 width: MediaQuery.of(context).size.width - 120,
