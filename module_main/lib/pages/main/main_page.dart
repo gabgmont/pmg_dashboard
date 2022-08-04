@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:module_assurance/pages/assurances/assurances_page.dart';
-import 'package:module_design/assets/pmg_icons.dart';
-import 'package:module_design/styles/pmg_colors.dart';
-import 'package:module_design/styles/pmg_spacing.dart';
-import 'package:module_design/styles/pmg_typography.dart';
 import 'package:module_main/pages/main/controller/main_page_controller.dart';
 import 'package:module_main/pages/main/widgets/main_header.dart';
 import 'package:module_main/pages/main/widgets/main_menu.dart';

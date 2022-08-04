@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/models/enum/process_status.dart';
 import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
 
-class PageTile extends StatelessWidget {
-  final String label;
+class ProcessPageTile extends StatelessWidget {
+  final ProcessStatus status;
   final bool selected;
   final Function() onTap;
-  const PageTile(
+  const ProcessPageTile(
       {Key? key,
-      required this.label,
+      required this.status,
       required this.selected,
       required this.onTap})
       : super(key: key);
@@ -31,7 +32,7 @@ class PageTile extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
               vertical: PmgSpacing.micro, horizontal: PmgSpacing.xxxs),
           child: Text(
-            label,
+            status.description,
             style:
                 PmgTypography.bodySmallSemiBold(color: PmgColors.neutralDark),
           ),
