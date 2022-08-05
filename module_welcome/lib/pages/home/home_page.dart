@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, state) {
           if (state.isLoading) {
             return const Center(child: CircularProgressIndicator());
-          }
+          } 
           return Padding(
             padding:
                 const EdgeInsets.only(left: PmgSpacing.xs, top: PmgSpacing.xs),
@@ -57,8 +57,10 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: PmgSpacing.micro),
                 Padding(
                   padding: const EdgeInsets.only(right: PmgSpacing.xs),
-                  child:
-                      ListView(shrinkWrap: true, children: _buildProcesses()),
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: _buildProcesses(),
+                  ),
                 )
               ],
             ),
