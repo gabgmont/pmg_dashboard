@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, state) {
           if (state.isLoading) {
             return const Center(child: CircularProgressIndicator());
-          } 
+          }
           return Padding(
             padding:
                 const EdgeInsets.only(left: PmgSpacing.xs, top: PmgSpacing.xs),

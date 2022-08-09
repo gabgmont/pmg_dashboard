@@ -1,12 +1,15 @@
+import 'package:module_assurance/client/process_client.dart';
 import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
 
 import 'pages/assurances/assurances_page.dart';
+import 'pages/assurances/bloc/assurance_cubit.dart';
 
 class AssuranceModule extends Module {
   
   static final assuranceBinds = <Bind<Object>>[
-  
+    Bind.lazySingleton((i) => AssuranceCubit()),
+    Bind.lazySingleton((i) => IProcessClient())
   ];
   
   @override

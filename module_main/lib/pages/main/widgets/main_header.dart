@@ -21,7 +21,7 @@ class MainHeader extends StatelessWidget {
                 style:
                     PmgTypography.bodyLargeSemiBold(color: PmgColors.monoWhite),
                 children: [
-                  TextSpan(text: 'Gabriel!', style: PmgTypography.bodyLarge()),
+                  TextSpan(text: 'Gabriel!', style: PmgTypography.bodyLarge(color: PmgColors.monoWhite)),
                 ],
               )),
             ),

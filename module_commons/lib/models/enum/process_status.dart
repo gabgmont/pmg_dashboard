@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/styles/pmg_colors.dart';
 
+enum ResumedProcessStatus {
+  concluded,
+  pending,
+  refused,
+  canceled,
+}
+
 enum ProcessStatus {
   validatingForm,
   sendToAnalysys,
@@ -16,6 +23,57 @@ enum ProcessStatus {
   refused,
   canceled,
   unknown
+}
+
+extension ResumedProcessStatusConfig on ResumedProcessStatus {
+  PmgIcons get icon {
+    switch (this) {
+      case ResumedProcessStatus.concluded:
+        return PmgIcons.approved;
+      case ResumedProcessStatus.pending:
+        return PmgIcons.pending;
+      case ResumedProcessStatus.refused:
+        return PmgIcons.refused;
+      case ResumedProcessStatus.canceled:
+        return PmgIcons.cancel;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case ResumedProcessStatus.concluded:
+        return PmgColors.statusSuccess;
+      case ResumedProcessStatus.pending:
+        return PmgColors.statusWarning;
+      case ResumedProcessStatus.refused:
+        return PmgColors.statusError;
+      case ResumedProcessStatus.canceled:
+        return PmgColors.statusError;
+    }
+  }
+
+  List<ProcessStatus> get processStatus {
+    switch (this) {
+      case ResumedProcessStatus.concluded:
+        return [ProcessStatus.concluded];
+      case ResumedProcessStatus.pending:
+        return [
+          ProcessStatus.validatingForm,
+          ProcessStatus.sendToAnalysys,
+          ProcessStatus.analyzing,
+          ProcessStatus.approved,
+          ProcessStatus.emittingProposal,
+          ProcessStatus.signedDocuments,
+          ProcessStatus.sendToInsuranceCompany,
+          ProcessStatus.emittingPolicy,
+          ProcessStatus.policyEmmited
+        ];
+      case ResumedProcessStatus.refused:
+        return [ProcessStatus.refused];
+      case ResumedProcessStatus.canceled:
+        return [ProcessStatus.canceled];
+    }
+  }
 }
 
 extension ProcessStatusConfig on ProcessStatus {
@@ -71,6 +129,29 @@ extension ProcessStatusConfig on ProcessStatus {
         return PmgIcons.cancel;
       case ProcessStatus.unknown:
         return PmgIcons.new_item;
+    }
+  }
+
+  ResumedProcessStatus get resumedStatus {
+    switch (this) {
+      case ProcessStatus.validatingForm:
+      case ProcessStatus.sendToAnalysys:
+      case ProcessStatus.analyzing:
+      case ProcessStatus.approved:
+      case ProcessStatus.emittingProposal:
+      case ProcessStatus.signedDocuments:
+      case ProcessStatus.sendToInsuranceCompany:
+      case ProcessStatus.emittingPolicy:
+      case ProcessStatus.policyEmmited:
+        return ResumedProcessStatus.pending;
+      case ProcessStatus.concluded:
+        return ResumedProcessStatus.concluded;
+      case ProcessStatus.refused:
+        return ResumedProcessStatus.refused;
+      case ProcessStatus.canceled:
+        return ResumedProcessStatus.canceled;
+      case ProcessStatus.unknown:
+        return ResumedProcessStatus.canceled;
     }
   }
 

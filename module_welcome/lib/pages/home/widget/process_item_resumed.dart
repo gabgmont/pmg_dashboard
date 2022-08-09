@@ -39,7 +39,7 @@ class ProcessItemResumed extends StatelessWidget {
                   child: ProcessItemText(text: process.status.description)),
               const ProcessItemDivider(),
               SizedBox(
-                  width: 200, child: ProcessItemText(text: process.tenantName)),
+                  width: 200, child: ProcessItemText(text: process.principalTenantName)),
               const ProcessItemDivider(),
               SizedBox(
                   width: 120,

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class PmgColors{
   static const primaryDark = Color(0xFF004b76);
