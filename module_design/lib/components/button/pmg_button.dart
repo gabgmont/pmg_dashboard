@@ -5,6 +5,7 @@ import '../../styles/pmg_radius.dart';
 
 class PmgButton extends StatefulWidget {
   final String label;
+  final Color? textColor;
   final PmgIcons? leftIcon;
   final PmgIcons? rightIcon;
   final PmgButtonType buttonType;
@@ -20,6 +21,7 @@ class PmgButton extends StatefulWidget {
     this.rightIcon,
     this.disabled = false,
     required this.onTap,
+    this.textColor,
   })  : assert(leftIcon == null || rightIcon == null),
         super(key: key);
 
@@ -81,11 +83,16 @@ class _PmgButtonState extends State<PmgButton> {
                         color: widget.buttonType.contentColor,
                       ),
                     ),
-                  Text(
-                    widget.label,
-                    style: widget.buttonSize.typography(widget.disabled
-                        ? widget.buttonType.disabledContentColor
-                        : widget.buttonType.contentColor),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      widget.label,
+                      style: widget.textColor == null
+                          ? widget.buttonSize.typography(widget.disabled
+                              ? widget.buttonType.disabledContentColor
+                              : widget.buttonType.contentColor)
+                          : widget.buttonSize.typography(widget.textColor),
+                    ),
                   ),
                   if (widget.rightIcon != null)
                     Padding(

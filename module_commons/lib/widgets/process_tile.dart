@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/core/pmg_routes.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_commons/models/entity/process.dart';
 import 'package:module_commons/models/enum/process_status.dart';
 import 'package:module_design/assets/pmg_icons.dart';
@@ -15,7 +17,7 @@ class ProcessTile extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(vertical: PmgSpacing.femto),
         child: InkWell(
-          onTap: () {},
+          onTap: () => Modular.to.pushNamed(PmgRoutes.process, arguments: process),
           child: Container(
             width: double.infinity,
             height: 170,

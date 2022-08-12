@@ -15,6 +15,4 @@ extension MainPagesConfig on MainPages {
         return 4;
     }
   }
-
-  
 }
