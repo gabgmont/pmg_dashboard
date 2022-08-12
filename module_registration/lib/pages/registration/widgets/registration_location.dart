@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/export_commons.dart';
+import 'package:module_design/components/control/radio/pmg_radio.dart';
+import 'package:module_design/components/control/switch/pmg_switch.dart';
 import 'package:module_design/components/drop_down/pmg_drop_down.dart';
 import 'package:module_design/components/drop_down/pmg_drop_down_item.dart';
 import 'package:module_design/components/text_field/pmg_text_field.dart';
@@ -58,68 +61,56 @@ class _RegistrationLocationState extends State<RegistrationLocation> {
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
+                      label: 'Cep',
+                      hint: 'Tipo de Locação',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
+                      label: 'Bairro',
+                      hint: 'Sem complemento',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
+                      label: 'rua',
+                      hint: '00',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
+                      label: 'Numero',
+                      hint: '00',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
-                      errorMessage: 'digita correto',
+                      label: 'Complemento',
+                      hint: 'Sem complemento',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
-                      errorMessage: 'digita correto',
+                      label: 'Cidade',
+                      hint: 'Sem complemento',
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     PmgTextField(
                       controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
-                      errorMessage: 'digita correto',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    PmgTextField(
-                      controller: TextEditingController(),
-                      label: 'nome',
-                      hint: 'Fulano',
-                      errorMessage: 'digita correto',
+                      label: 'Estado',
+                      hint: 'Sem complemento',
                     ),
                   ],
                 ),
@@ -146,35 +137,24 @@ class _RegistrationLocationState extends State<RegistrationLocation> {
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Tipo de locação',
+                    hint: 'Tipo de locação',
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Imobiliaria',
+                    hint: 'Imobiliaria',
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  PmgTextField(
-                    controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
-                  ),
-                  SizedBox(
-                    height: 20,
+                    label: 'Atendente',
+                    hint: 'Atendente',
                   ),
                 ],
               ),
@@ -200,24 +180,24 @@ class _RegistrationLocationState extends State<RegistrationLocation> {
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Valor do Aluguel',
+                    hint: 'Tipo de Locação',
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Valor do Comdominio',
+                    hint: 'Tipo de Locação',
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Valor do IPTU',
+                    hint: 'Tipo de Locação',
                   ),
                   SizedBox(
                     height: 20,
@@ -246,35 +226,26 @@ class _RegistrationLocationState extends State<RegistrationLocation> {
                   ),
                   PmgTextField(
                     controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                    label: 'Motivo Locação',
+                    hint: 'Abertura de filial',
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  PmgTextField(
-                    controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
+                  Row(
+                    children: [
+                      PmgRadio(active: true, selected: true, onTap: () {}),
+                      Text('Pessoa Fisica'),
+                    ],
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  PmgTextField(
-                    controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  PmgTextField(
-                    controller: TextEditingController(),
-                    label: 'nome',
-                    hint: 'Fulano',
-                  ),
-                  SizedBox(
-                    height: 20,
+                  Row(
+                    children: [
+                      PmgRadio(active: false, selected: true, onTap: () {}),
+                      Text('Pessoa Juridica'),
+                    ],
                   ),
                 ],
               ),

@@ -1,17 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:module_commons/export_bloc.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
-import 'package:module_design/components/drop_down/pmg_drop_down.dart';
-import 'package:module_design/components/drop_down/pmg_drop_down_item.dart';
-import 'package:module_design/components/text_field/pmg_text_field.dart';
 import 'package:module_design/styles/pmg_colors.dart';
+import 'package:module_registration/pages/registration/controller/registration_form_controller.dart';
+import 'package:module_registration/pages/registration/controller/registration_page_config.dart';
+import 'package:module_registration/pages/registration/widgets/registration_client.dart';
+import 'package:module_registration/pages/registration/widgets/registration_company.dart';
+import 'package:module_registration/pages/registration/widgets/registration_final.dart';
 import 'package:module_registration/pages/registration/widgets/registration_location.dart';
 
 class RegistrainPage extends StatefulWidget {
@@ -23,6 +20,7 @@ class RegistrainPage extends StatefulWidget {
 
 class _RegistrainPageState extends State<RegistrainPage> {
   int? dropDownValue;
+  final controller = RegistrationFormController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,23 +51,30 @@ class _RegistrainPageState extends State<RegistrainPage> {
               padding: const EdgeInsets.only(top: 68.0, left: 25),
               child: Row(
                 children: [
-                  const Text(
-                    'Nos diga um pouco mais sobre sua locação',
+                  Text(
+                    controller.currentPage.pagetitle,
                     style: TextStyle(
                         fontSize: 48,
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.bold,
                         color: PmgColors.neutralDark),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.20,
-                        right: 26),
-                    child: PmgButton(
-                      onTap: () {},
-                      buttonType: PmgButtonType.text,
-                      rightIcon: PmgIcons.arrow_right,
-                      buttonSize: PmgButtonSize.extraLarge,
+                  Visibility(
+                    visible: controller.currentPage != RegistrationPages.finals,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.20,
+                          right: 26),
+                      child: PmgButton(
+                        onTap: () {
+                          setState(() {
+                            controller.nextpage();
+                          });
+                        },
+                        buttonType: PmgButtonType.text,
+                        rightIcon: PmgIcons.arrow_right,
+                        buttonSize: PmgButtonSize.extraLarge,
+                      ),
                     ),
                   )
                 ],
@@ -80,7 +85,13 @@ class _RegistrainPageState extends State<RegistrainPage> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.7,
               child: PageView(
-                children: [RegistrationLocation()],
+                controller: controller.controller,
+                children: [
+                  RegistrationLocation(),
+                  RegistrationClient(),
+                  RegistrationCompany(),
+                  registrationFinal()
+                ],
               ),
             ),
           ],
