@@ -108,7 +108,7 @@ extension ProcessStatusConfig on ProcessStatus {
     }
   }
 
-  PmgIcons get icon {
+  PmgIcons get statusIcon {
     switch (this) {
       case ProcessStatus.validatingForm:
       case ProcessStatus.sendToAnalysys:
@@ -174,6 +174,37 @@ extension ProcessStatusConfig on ProcessStatus {
       case ProcessStatus.canceled:
       case ProcessStatus.unknown:
         return PmgColors.statusError;
+    }
+  }
+
+  PmgIcons get actionIcon {
+    switch (this) {
+      case ProcessStatus.validatingForm:
+        return PmgIcons.validate;
+      case ProcessStatus.sendToAnalysys:
+        return PmgIcons.send;
+      case ProcessStatus.analyzing:
+        return PmgIcons.pending;
+      case ProcessStatus.approved:
+        return PmgIcons.validate;
+      case ProcessStatus.emittingProposal:
+        return PmgIcons.pending;
+      case ProcessStatus.signedDocuments:
+        return PmgIcons.validate;
+      case ProcessStatus.sendToInsuranceCompany:
+        return PmgIcons.send;
+      case ProcessStatus.emittingPolicy:
+        return PmgIcons.pending;
+      case ProcessStatus.policyEmmited:
+        return PmgIcons.validate;
+      case ProcessStatus.concluded:
+        return PmgIcons.approved;
+      case ProcessStatus.refused:
+        return PmgIcons.refused;
+      case ProcessStatus.canceled:
+        return PmgIcons.cancel;
+      case ProcessStatus.unknown:
+        return PmgIcons.add;
     }
   }
 }

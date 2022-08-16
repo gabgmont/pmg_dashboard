@@ -51,7 +51,7 @@ class ProcessTile extends StatelessWidget {
                       Row(
                         children: [
                           PmgIcon(
-                            process.status.icon,
+                            process.status.statusIcon,
                             color: process.status.color,
                             size: 20,
                           ),

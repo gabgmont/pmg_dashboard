@@ -27,7 +27,7 @@ class ProcessItemResumed extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               PmgIcon(
-                process.status.icon,
+                process.status.statusIcon,
                 color: process.status.color,
               ),
               SizedBox(
