@@ -16,8 +16,8 @@ class RealStateItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => InkWell(
         onTap: () => Modular.to.pushNamed(realState == null
-            ? PmgRoutes.realStatesRegisterPage
-            : PmgRoutes.realStatesRegisterPage),
+            ? PmgRoutes.realStatesDetailPage
+            : PmgRoutes.realStatesDetailPage),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: PmgRadius.medium,

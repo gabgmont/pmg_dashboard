@@ -76,11 +76,12 @@ class _PmgButtonState extends State<PmgButton> {
                 children: [
                   if (widget.leftIcon != null)
                     Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                       child: PmgIcon(
                         widget.leftIcon!,
                         size: widget.buttonSize.contentSize,
-                        color: widget.buttonType.contentColor,
+                        color:
+                            widget.textColor ?? widget.buttonType.contentColor,
                       ),
                     ),
                   Padding(
@@ -96,11 +97,11 @@ class _PmgButtonState extends State<PmgButton> {
                   ),
                   if (widget.rightIcon != null)
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                       child: PmgIcon(
                         widget.rightIcon!,
                         size: widget.buttonSize.contentSize,
-                        color: widget.buttonType.contentColor,
+                        color: widget.textColor ?? widget.buttonType.contentColor,
                       ),
                     ),
                 ],
