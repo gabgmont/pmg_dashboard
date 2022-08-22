@@ -141,7 +141,7 @@ class _RegistrationClientState extends State<RegistrationClient> {
               ),
             ),
             SizedBox(
-              width: 20,
+              width: MediaQuery.of(context).size.width * 0.05,
             ),
             // formulario 2
             SizedBox(
@@ -184,7 +184,7 @@ class _RegistrationClientState extends State<RegistrationClient> {
               ),
             ),
             SizedBox(
-              width: 20,
+              width: MediaQuery.of(context).size.width * 0.05,
             ),
             // formulario 3
             SizedBox(

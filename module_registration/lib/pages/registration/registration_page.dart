@@ -8,6 +8,7 @@ import 'package:module_registration/pages/registration/controller/registration_f
 import 'package:module_registration/pages/registration/controller/registration_page_config.dart';
 import 'package:module_registration/pages/registration/widgets/registration_client.dart';
 import 'package:module_registration/pages/registration/widgets/registration_company.dart';
+import 'package:module_registration/pages/registration/widgets/registration_establishment.dart';
 import 'package:module_registration/pages/registration/widgets/registration_final.dart';
 import 'package:module_registration/pages/registration/widgets/registration_location.dart';
 
@@ -82,13 +83,14 @@ class _RegistrainPageState extends State<RegistrainPage> {
             ),
             // formulario
             SizedBox(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.7,
               child: PageView(
                 controller: controller.controller,
                 children: [
                   RegistrationLocation(),
                   RegistrationClient(),
+                  RegistrationEstablishment(),
                   RegistrationCompany(),
                   registrationFinal()
                 ],

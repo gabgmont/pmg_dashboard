@@ -1,4 +1,4 @@
-enum RegistrationPages { location, client, company, finals }
+enum RegistrationPages { location, client, establishment, company, finals }
 
 extension RegistrationPagesConfig on RegistrationPages {
   int get pageIdex {
@@ -7,10 +7,12 @@ extension RegistrationPagesConfig on RegistrationPages {
         return 0;
       case RegistrationPages.client:
         return 1;
-      case RegistrationPages.company:
+      case RegistrationPages.establishment:
         return 2;
-      case RegistrationPages.finals:
+      case RegistrationPages.company:
         return 3;
+      case RegistrationPages.finals:
+        return 4;
     }
   }
 
@@ -19,6 +21,8 @@ extension RegistrationPagesConfig on RegistrationPages {
       case RegistrationPages.location:
         return RegistrationPages.client;
       case RegistrationPages.client:
+        return RegistrationPages.establishment;
+      case RegistrationPages.establishment:
         return RegistrationPages.company;
       case RegistrationPages.company:
       case RegistrationPages.finals:
@@ -31,8 +35,10 @@ extension RegistrationPagesConfig on RegistrationPages {
       case RegistrationPages.location:
       case RegistrationPages.client:
         return RegistrationPages.location;
-      case RegistrationPages.company:
+      case RegistrationPages.establishment:
         return RegistrationPages.client;
+      case RegistrationPages.company:
+        return RegistrationPages.establishment;
       case RegistrationPages.finals:
         return RegistrationPages.company;
     }
@@ -44,6 +50,8 @@ extension RegistrationPagesConfig on RegistrationPages {
         return 'Nos diga um pouco mais sobre sua locação';
       case RegistrationPages.client:
         return 'Agora nos conte sobre você';
+      case RegistrationPages.establishment:
+        return 'Fale um pouco sobre seu estabelecimento';
       case RegistrationPages.company:
         return 'Fale um pouco sobre sua empresa';
       case RegistrationPages.finals:
