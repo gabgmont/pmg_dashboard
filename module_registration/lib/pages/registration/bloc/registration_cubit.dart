@@ -1,6 +1,7 @@
-// import 'package:flutter/animation.dart';
-// import 'package:module_commons/export_bloc.dart';
+import 'package:module_commons/export_bloc.dart';
 
-// class RegistrationCubit extends Cubit {
-//   RegistrationCubit() : super(RegistrationState());
-// }
+import 'registration_state.dart';
+
+class RegistrationCubit extends Cubit {
+  RegistrationCubit() : super(const RegistrationState());
+}
