@@ -15,6 +15,8 @@ class RegistrationLocation extends StatefulWidget {
 }
 
 class _RegistrationLocationState extends State<RegistrationLocation> {
+  final _cepController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     int? dropDownValue;
@@ -60,9 +62,10 @@ class _RegistrationLocationState extends State<RegistrationLocation> {
                       height: 20,
                     ),
                     PmgTextField(
-                      controller: TextEditingController(),
+                      controller: _cepController,
                       label: 'Cep',
                       hint: 'Tipo de Locação',
+                      onChanged: (text) {},
                     ),
                     SizedBox(
                       height: 20,
