@@ -35,6 +35,9 @@ dependencies:
   module_welcome:
     path: ../module_welcome
   
+  module_real_state:
+    path: ../module_real_state
+
   module_main:
     path: '../module_main'
 

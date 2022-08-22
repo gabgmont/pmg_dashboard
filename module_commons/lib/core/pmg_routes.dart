@@ -8,7 +8,8 @@ class PmgRoutes {
   static const homePage = '/home';
   static const tenantsPage = '/tenants';
   static const assurancesPage = '/assurances';
-  static const realStatesPage = '/real-states';
+  static const realStatesDetailPage = '/real-states-detail';
+  static const realStatesRegisterPage = '/real-states-register';
   static const notificationsPage = '/notifications';
 
   static const process = '/process';

@@ -4,7 +4,6 @@ import 'package:module_assurance/pages/process/widgets/process_conditions.dart';
 import 'package:module_assurance/pages/process/widgets/process_historic_header.dart';
 import 'package:module_assurance/pages/process/widgets/process_personal_data.dart';
 import 'package:module_assurance/pages/process/widgets/process_status_row.dart';
-import 'package:module_commons/export_commons.dart';
 import 'package:module_commons/models/entity/process.dart';
 import 'package:module_commons/models/enum/process_status.dart';
 import 'package:module_design/assets/pmg_icons.dart';
@@ -25,112 +24,96 @@ class ProcessPage extends StatelessWidget {
         child: Padding(
       padding: const EdgeInsets.only(
           left: PmgSpacing.xs, top: PmgSpacing.xs, right: PmgSpacing.xs),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: PmgSpacing.xxxs),
-            child: PmgIcon(
-              PmgIcons.arrow_left,
-              size: 40,
-              color: PmgColors.neutralDark,
-              onTap: Modular.to.pop,
-            ),
-          ),
-          Expanded(
-            child: CustomScrollView(
-              shrinkWrap: true,
-              slivers: [
-                SliverList(
-                    delegate: SliverChildListDelegate(
-                  [
-                    ProcessHeader(
-                      number: '${process?.number}',
-                      startDate: process?.startDate,
-                    ),
-                    const SizedBox(height: PmgSpacing.xs),
-                    ProcessPersonalData(process: process),
-                    const SizedBox(height: PmgSpacing.md),
-                    ProcessConditions(process: process),
-                    const SizedBox(height: PmgSpacing.md),
-                    const ProcessStatusRow(),
-                    const SizedBox(height: PmgSpacing.md),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                            child: Column(
+      child: CustomScrollView(
+        shrinkWrap: true,
+        slivers: [
+          SliverList(
+              delegate: SliverChildListDelegate(
+            [
+              ProcessHeader(
+                number: '${process?.number}',
+                startDate: process?.startDate,
+              ),
+              const SizedBox(height: PmgSpacing.xs),
+              ProcessPersonalData(process: process),
+              const SizedBox(height: PmgSpacing.md),
+              ProcessConditions(process: process),
+              const SizedBox(height: PmgSpacing.md),
+              const ProcessStatusRow(),
+              const SizedBox(height: PmgSpacing.md),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                      child: Column(
+                    children: [
+                      ProcessHistoricHeader(onTap: () {}),
+                      const SizedBox(height: PmgSpacing.xxxs),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                                                  ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                      ProcessHistoricItem(
+                        historic: ProcessHistoric(
+                            event: 'Seguradora aprovou a analise',
+                            date: '11/05/2022'),
+                      ),
+                    ],
+                  )),
+                  const Spacer(),
+                  Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: PmgSpacing.md),
+                        child: Row(
                           children: [
-                            ProcessHistoricHeader(onTap: () {}),
-                            const SizedBox(height: PmgSpacing.xxxs),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
+                            PmgIcon(
+                              process?.status.actionIcon ?? PmgIcons.close,
+                              size: 80,
+                              color: PmgColors.primaryDark,
                             ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                                                        ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
-                            ProcessHistoricItem(
-                              historic: ProcessHistoric(
-                                  event: 'Seguradora aprovou a analise',
-                                  date: '11/05/2022'),
-                            ),
+                            Text(
+                              process?.status.description ?? 'Enviar',
+                              style: PmgTypography.bodyMedium(
+                                  color: PmgColors.primaryDark),
+                            )
                           ],
-                        )),
-                        const Spacer(),
-                        Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: PmgSpacing.md),
-                              child: Row(
-                                children: [
-                                  PmgIcon(
-                                    process?.status.actionIcon ?? PmgIcons.close,
-                                    size: 80,
-                                    color: PmgColors.primaryDark,
-                                  ),
-                                  Text(
-                                    process?.status.description ?? 'Enviar',
-                                    style: PmgTypography.bodyMedium(
-                                        color: PmgColors.primaryDark),
-                                  )
-                                ],
-                              ),
-                            )),
-                      ],
-                    ),
-                  ],
-                ))
-              ],
-            ),
-          )
+                        ),
+                      )),
+                ],
+              ),
+            ],
+          ))
         ],
       ),
     ));

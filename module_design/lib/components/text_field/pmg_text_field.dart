@@ -23,7 +23,8 @@ class PmgTextField extends StatefulWidget {
       this.inputType,
       this.inputFormatters,
       this.isPassword = false,
-      this.onChanged, this.enabled})
+      this.onChanged,
+      this.enabled})
       : super(key: key);
 
   @override
@@ -53,7 +54,7 @@ class _PmgTextFieldState extends State<PmgTextField> {
   @override
   Widget build(BuildContext context) {
     var labelColor = _focusNode.hasFocus || text.isNotEmpty
-        ? PmgColors.monoBlack
+        ? PmgColors.neutralDark
         : PmgColors.neutral;
 
     return Padding(
@@ -86,7 +87,7 @@ class _PmgTextFieldState extends State<PmgTextField> {
             labelText: widget.label,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: widget.hint,
-            hintStyle: PmgTypography.bodyTiny(),
+            hintStyle: PmgTypography.bodyTiny(color: PmgColors.neutral),
             focusedBorder: OutlineInputBorder(
                 borderRadius: PmgRadius.medium,
                 borderSide:

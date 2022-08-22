@@ -1,7 +1,7 @@
 import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
 
-import 'page/real_states/real_states_page.dart';
+import 'page/register/real_state_register_page.dart';
 
 class RealStateModule extends Module {
 
@@ -14,7 +14,7 @@ class RealStateModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(PmgRoutes.realStatesPage, child: (context, args) => const RealStatesPage())
+    ChildRoute(PmgRoutes.realStatesRegisterPage, child: (context, args) => const RealStateRegisterPage())
   ];
 
 }

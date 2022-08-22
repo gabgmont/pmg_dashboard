@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/styles/pmg_colors.dart';
@@ -14,7 +15,9 @@ class RealStateItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => InkWell(
-        onTap: () {},
+        onTap: () => Modular.to.pushNamed(realState == null
+            ? PmgRoutes.realStatesRegisterPage
+            : PmgRoutes.realStatesRegisterPage),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: PmgRadius.medium,
