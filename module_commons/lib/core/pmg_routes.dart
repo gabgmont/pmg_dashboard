@@ -11,6 +11,8 @@ class PmgRoutes {
   static const realStatesDetailPage = '/real-states-detail';
   static const realStatesRegisterPage = '/real-states-register';
   static const notificationsPage = '/notifications';
+  static const attendantsPage = '/attendants';
+  static const attendantDetail = '/attendant-detail';
 
   static const process = '/process';
 }

@@ -3,12 +3,12 @@ class Attendants {
   final String cpf;
   final String phone;
   final String email;
-  final String usernmae;
+  final String username;
 
   Attendants(
       {required this.name,
       required this.cpf,
       required this.phone,
       required this.email,
-      required this.usernmae});
+      required this.username});
 }

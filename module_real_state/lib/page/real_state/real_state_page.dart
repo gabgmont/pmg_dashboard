@@ -21,10 +21,10 @@ class RealStatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: Padding(
+        child: SingleChildScrollView(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: PmgSpacing.xs),
-            child: SingleChildScrollView(
-                child: Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: PmgSpacing.xs),
@@ -90,7 +90,7 @@ class RealStatePage extends StatelessWidget {
                         label: 'Atendentes',
                         rightIcon: PmgIcons.arrow_right,
                         buttonType: PmgButtonType.text,
-                        onTap: () {})
+                        onTap: () => Modular.to.pushNamed(PmgRoutes.attendantsPage))
                   ],
                 ),
                 const SizedBox(height: PmgSpacing.md),
@@ -100,9 +100,12 @@ class RealStatePage extends StatelessWidget {
                       color: PmgColors.neutralDark),
                 ),
                 const SizedBox(height: PmgSpacing.xxxs),
-                ...buildProcesses()
+                ...buildProcesses(),
+                const SizedBox(height: PmgSpacing.xs)
               ],
-            ))));
+            ),
+          ),
+        ));
   }
 
   buildProcesses() => [
