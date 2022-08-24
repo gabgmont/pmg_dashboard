@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/core/pmg_routes.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
@@ -13,7 +15,7 @@ class TenantsSearchItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: PmgSpacing.xxxs),
+        padding: const EdgeInsets.symmetric(vertical: PmgSpacing.femto),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -55,7 +57,7 @@ class TenantsSearchItem extends StatelessWidget {
                 PmgIcons.more_horizontal,
                 size: 40,
                 color: PmgColors.primaryDark,
-                onTap: () {},
+                onTap: () => Modular.to.pushNamed(PmgRoutes.tenantDetail),
               )),
             ),
           ],

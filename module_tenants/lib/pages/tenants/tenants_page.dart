@@ -7,7 +7,7 @@ import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
 import 'package:module_tenants/pages/tenants/bloc/tenants_cubit.dart';
 import 'package:module_tenants/pages/tenants/bloc/tenants_state.dart';
-import 'package:module_tenants/pages/tenants/widgets/tenants_seartch_item.dart';
+import 'package:module_tenants/pages/tenants/widgets/tenants_search_item.dart';
 
 import 'widgets/tenants_search_header.dart';
 
@@ -21,7 +21,7 @@ class TenantsPage extends StatefulWidget {
 class _TenantsPageState extends State<TenantsPage> {
   final _cubit = Modular.get<TenantsCubit>();
   final _controller = TextEditingController();
-  
+
   @override
   void initState() {
     _cubit.init();
@@ -60,9 +60,7 @@ class _TenantsPageState extends State<TenantsPage> {
                       child: TenantsSearchHeader(),
                     ),
                     SliverList(
-                        delegate: SliverChildListDelegate(
-                      _buildTenantList(),
-                    ))
+                        delegate: SliverChildListDelegate(_buildTenantList()))
                   ],
                 );
               })

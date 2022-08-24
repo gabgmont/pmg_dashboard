@@ -3,6 +3,7 @@ import 'package:module_commons/export_commons.dart';
 import 'package:module_tenants/clients/tenants_search_client.dart';
 import 'package:module_tenants/pages/tenants/bloc/tenants_cubit.dart';
 
+import 'pages/tenant_detail/tenant_detail_page.dart';
 import 'pages/tenants/tenants_page.dart';
 
 class TenantsModule extends Module {
@@ -16,6 +17,7 @@ class TenantsModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(PmgRoutes.tenantsPage, child: (context, args) => const TenantsPage())
+    ChildRoute(PmgRoutes.tenantsPage, child: (context, args) => const TenantsPage()),
+    ChildRoute(PmgRoutes.tenantDetail, child: (context,args) => const TenantDetailPage())
   ];
 }

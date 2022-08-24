@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'main_page_config.dart';
 
 class MainPageController {
-  final controller = PageController(initialPage: 4);
+  final controller = PageController(initialPage: 0);
   MainPages currentPage = MainPages.tenants;
 
   navigateTo(MainPages page) {

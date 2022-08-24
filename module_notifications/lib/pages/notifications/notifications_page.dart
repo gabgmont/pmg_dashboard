@@ -3,6 +3,7 @@ import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_radius.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
+import 'package:module_notifications/pages/notifications/widgets/notification_item.dart';
 
 class NotificationsPage extends StatelessWidget {
   const NotificationsPage({Key? key}) : super(key: key);
@@ -17,10 +18,13 @@ class NotificationsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Notificações',
-                style:
-                    PmgTypography.h3SemiBold(color: PmgColors.neutralDark)),
+                style: PmgTypography.h3SemiBold(color: PmgColors.neutralDark)),
             const SizedBox(height: PmgSpacing.xxs),
-           ],
+            NotificationItem(),
+            NotificationItem(),
+            NotificationItem(),
+            NotificationItem(),
+          ],
         ),
       ),
     );
