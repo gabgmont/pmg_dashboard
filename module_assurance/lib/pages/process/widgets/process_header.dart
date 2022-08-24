@@ -9,6 +9,8 @@ import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
 
+import 'dialog_cancel_process.dart';
+
 class ProcessHeader extends StatelessWidget {
   final String? number;
   final String? startDate;
@@ -49,7 +51,14 @@ class ProcessHeader extends StatelessWidget {
             textColor: PmgColors.statusError,
             buttonSize: PmgButtonSize.medium,
             buttonType: PmgButtonType.text,
-            onTap: () {},
+            onTap: () => showDialog(
+                context: context,
+                builder: (context) =>
+                    AlertDialog(
+                      content: SizedBox(
+                        width: 600,
+                        height: 309,
+                        child: DialogCancelProcess()))),
           )
         ],
       );

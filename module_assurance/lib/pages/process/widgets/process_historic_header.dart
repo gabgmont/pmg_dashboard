@@ -19,7 +19,11 @@ class ProcessHistoricHeader extends StatelessWidget {
             style: PmgTypography.bodySmall(color: PmgColors.neutralDark),
           ),
           const SizedBox(width: PmgSpacing.xxxs),
-          const PmgIcon(PmgIcons.add, color: PmgColors.neutralDark)
+          PmgIcon(
+            PmgIcons.add,
+            color: PmgColors.neutralDark,
+            onTap: onTap,
+          )
         ],
       );
 }
