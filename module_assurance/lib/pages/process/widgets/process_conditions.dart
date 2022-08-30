@@ -6,13 +6,18 @@ import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
 import 'package:module_design/styles/pmg_typography.dart';
 
+import 'dialog_approval_conditions.dart';
+import 'dialog_base_values.dart';
+import 'dialog_coverage.dart';
+import 'dialog_special_condition.dart';
+
 class ProcessConditions extends StatelessWidget {
   final Process? process;
   const ProcessConditions({Key? key, required this.process}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Column(
@@ -32,18 +37,28 @@ class ProcessConditions extends StatelessWidget {
                 children: [
                   PmgButton(
                     label: 'Condições da aprovação',
-                    disabled: true,
                     buttonType: PmgButtonType.outline,
                     buttonSize: PmgButtonSize.medium,
-                    onTap: () {},
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                            content: SizedBox(
+                                width: 600,
+                                height: 317,
+                                child: DialogApprovalConditions()))),
                   ),
                   const SizedBox(height: PmgSpacing.xxxs),
                   PmgButton(
                     label: 'Valores base',
-                    disabled: true,
                     buttonType: PmgButtonType.outline,
                     buttonSize: PmgButtonSize.medium,
-                    onTap: () {},
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                            content: SizedBox(
+                                width: 600,
+                                height: 267,
+                                child: DialogBaseValues()))),
                   ),
                 ],
               ),
@@ -56,18 +71,28 @@ class ProcessConditions extends StatelessWidget {
                 children: [
                   PmgButton(
                     label: 'Importâncias seguradas',
-                    disabled: true,
                     buttonType: PmgButtonType.outline,
                     buttonSize: PmgButtonSize.medium,
-                    onTap: () {},
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                            content: SizedBox(
+                                width: 600,
+                                height: 287,
+                                child: DialogCoverage()))),
                   ),
                   const SizedBox(height: PmgSpacing.xxxs),
                   PmgButton(
                     label: 'Condições especiais',
-                    disabled: true,
                     buttonType: PmgButtonType.outline,
                     buttonSize: PmgButtonSize.medium,
-                    onTap: () {},
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                            content: SizedBox(
+                                width: 600,
+                                height: 287,
+                                child: DialogSpecialConditions()))),
                   ),
                 ],
               ),
