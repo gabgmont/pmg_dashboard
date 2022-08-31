@@ -16,4 +16,5 @@ class PmgRoutes {
   static const attendantDetail = '/attendant-detail';
 
   static const process = '/process';
+  static const contractPage = '/contract-page';
 }

@@ -5,6 +5,8 @@ import 'package:module_assurance/pages/process/widgets/process_conditions.dart';
 import 'package:module_assurance/pages/process/widgets/process_historic_header.dart';
 import 'package:module_assurance/pages/process/widgets/process_personal_data.dart';
 import 'package:module_assurance/pages/process/widgets/process_status_row.dart';
+import 'package:module_commons/core/pmg_routes.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_commons/models/entity/process.dart';
 import 'package:module_commons/models/enum/process_status.dart';
 import 'package:module_design/assets/pmg_icons.dart';
@@ -110,6 +112,8 @@ class ProcessPage extends StatelessWidget {
                             process?.status.actionIcon ?? PmgIcons.close,
                             size: 80,
                             color: PmgColors.primaryDark,
+                            onTap: () =>
+                                Modular.to.pushNamed(PmgRoutes.contractPage),
                           ),
                           Text(
                             process?.status.description ?? 'Enviar',

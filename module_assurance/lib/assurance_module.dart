@@ -1,4 +1,5 @@
 import 'package:module_assurance/client/process_client.dart';
+import 'package:module_assurance/pages/contract_form/contract_form_page.dart';
 import 'package:module_commons/core/pmg_routes.dart';
 import 'package:module_commons/export_commons.dart';
 
@@ -20,6 +21,8 @@ class AssuranceModule extends Module {
         ChildRoute(PmgRoutes.assurancesPage,
             child: (context, args) => const AssurancesPage()),
         ChildRoute(PmgRoutes.process,
-            child: (context, args) => ProcessPage(process: args.data))
+            child: (context, args) => ProcessPage(process: args.data)),
+        ChildRoute(PmgRoutes.contractPage,
+            child: (context, args) => const ContractFormPage())
       ];
 }
