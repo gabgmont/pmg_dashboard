@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:module_commons/export_commons.dart';
 import 'package:module_design/assets/pmg_icons.dart';
 import 'package:module_design/assets/pmg_images.dart';
 import 'package:module_design/components/button/pmg_button.dart';
 import 'package:module_design/components/button/pmg_button_config.dart';
-import 'package:module_design/components/drop_down/pmg_drop_down.dart';
-import 'package:module_design/components/drop_down/pmg_drop_down_item.dart';
-import 'package:module_design/components/text_field/pmg_text_field.dart';
 import 'package:module_design/styles/pmg_colors.dart';
 import 'package:module_design/styles/pmg_radius.dart';
 import 'package:module_design/styles/pmg_spacing.dart';
@@ -33,11 +31,18 @@ class ContractFormPage extends StatelessWidget {
               ),
               child: Row(
                 children: [
+                  PmgIcon(
+                    PmgIcons.arrow_left,
+                    size: 40,
+                    color: PmgColors.neutralDark,
+                    onTap: Modular.to.pop,
+                  ),
+                  const SizedBox(width: PmgSpacing.xxxs),
                   const SizedBox(
                       height: 60, child: PmgImage(image: PmgImages.pmg_logo)),
                   const SizedBox(width: PmgSpacing.xxxs),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width - 200,
+                    width: MediaQuery.of(context).size.width - 256,
                     child: Text(
                       'Preencha os dados abaixo para solicitação dos dados do contrato para a imobiliária.',
                       style: PmgTypography.bodyLargeSemiBold(

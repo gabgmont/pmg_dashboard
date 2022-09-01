@@ -113,7 +113,7 @@ class ProcessPage extends StatelessWidget {
                             size: 80,
                             color: PmgColors.primaryDark,
                             onTap: () =>
-                                Modular.to.pushNamed(PmgRoutes.contractPage),
+                                Modular.to.pushNamed(PmgRoutes.proposalFormPage),
                           ),
                           Text(
                             process?.status.description ?? 'Enviar',
